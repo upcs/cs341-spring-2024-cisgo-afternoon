@@ -42,9 +42,22 @@ interface _Coordinates {
 
 interface _Session {
 	token ?: Token;
+	isAdmin : boolean;
 }
 
-interface _Location {
+interface _Location extends _Coordinates {
 	name : LocationName;
-	coords : _Coordinates;
 }
+
+interface _AdminCreds {
+	// some identifier
+}
+
+interface _DatabaseEntry {
+	ID: DB_KEY;
+}
+
+export type Location = _Location & _DatabaseEntry;
+export type AdminCreds = _AdminCreds & _DatabaseEntry;
+export type Review = _Review & _DatabaseEntry;
+export type Session = _Session; // no need to store this in SQL; this is short-term storage.
