@@ -7,6 +7,12 @@ body{
 
 /* reference video for map styling https://www.youtube.com/watch?v=l-9YQUmTOdI */
 
+#world_map{
+    width: 150%;
+    height: auto;
+    overflow: scroll;
+}
+
 /* map country styling */
 svg path{
     fill: rgb(56, 78, 29);
@@ -20,6 +26,13 @@ svg path:hover{
     transition: 0.3s;
     cursor: pointer;
 }
+
+#world_map.active{
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+
 
 /* navigation bar */
 ul{
