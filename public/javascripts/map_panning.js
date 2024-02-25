@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function(){
         // Creating a string to apply the new values onto the SVG
         var viewBoxString = `${newViewBox.x} ${newViewBox.y} ${viewBox.width} ${viewBox.height}`;
         map.setAttribute('viewBox', viewBoxString);
-        console.log(viewBoxString);
         //document.querySelector('.viewBox').innerHTML = viewBoxString;
     });
 
