@@ -21,20 +21,13 @@ svg path{
     pointer-events: auto;
 }
 
-
-/* hovering over a country */
-svg path:hover{
-    fill: rgb(34, 59, 5);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
 /* dragging the screen around */
 #world_map.active{
     cursor: grabbing;
     cursor: -webkit-grabbing;
     transform: scale(1);
 }
+
 
 /* navigation bar */
 ul{
