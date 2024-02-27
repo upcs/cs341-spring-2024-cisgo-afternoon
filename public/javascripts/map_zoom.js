@@ -2,42 +2,43 @@ var lastClicked = "none";
 document.querySelectorAll(".allPaths").forEach(e=>{
     
     var country = document.getElementsByName(e.getAttribute('name'));
+    var map = document.getElementById("world_map");
 
     e.addEventListener("click", function(){
-        window.onclick=function(){
 
-            // resets country
-            document.getElementsByName(lastClicked).forEach(function(item){
-                item.removeAttribute("style");
-                e.addEventListener("mousemove", hovering);
-                e.addEventListener("mouseout", out);
-                console.log(lastClicked);
-                console.log(e.getAttribute('name'));
-            })
 
-            // checks if user clicked country twice in a row. if so, shrinks country
-            if(lastClicked.localeCompare(e.getAttribute('name')) != 0){
-                lastClicked = e.getAttribute('name');
-                // loops thru each area in a country (including islands)
-                country.forEach(function(item){
-                // calculates country position
-                    var bbox = item.getBBox();
-                    var centreX = bbox.x + bbox.width/2;
-                    var centreY = bbox.y + bbox.height/2;
+        // // resets country
+        // document.getElementsByName(lastClicked).forEach(function(item){
+        //     item.removeAttribute("style");
+        //     e.addEventListener("mousemove", hovering);
+        //     e.addEventListener("mouseout", out);
+        //     console.log(lastClicked);
+        //     console.log(e.getAttribute('name'));
+        // })
 
-                    // sets origin to each country
-                    item.style.transformOrigin = centreX + 'px ' + centreY + 'px';
-                    // scales position
-                    item.style.transform = "translate(50%, -50%)";
-                    item.style.transform = `scale(2)`;
-                    item.style.stroke = "white";
-                    item.removeEventListener("mouseover", hovering);
-                    item.removeEventListener("mouseout", out);
-                    
-                    console.log(country);
-                })
-            }
-        }
+        // // checks if user clicked country twice in a row. if so, shrinks country
+        // if(lastClicked.localeCompare(e.getAttribute('name')) != 0){
+        //     lastClicked = e.getAttribute('name');
+        //     // loops thru each area in a country (including islands)
+        //     country.forEach(function(item){
+        //     // calculates country position
+        //         var bbox = item.getBBox();
+        //         var centreX = bbox.x + bbox.width/2;
+        //         var centreY = bbox.y + bbox.height/2;
+
+        //         // sets origin to each country
+        //         item.style.transformOrigin = centreX + 'px ' + centreY + 'px';
+
+        //         // scales position
+        //         item.style.transform = `scale(1)`;
+        //         item.style.stroke = "white";
+
+        //         item.removeEventListener("mouseover", hovering);
+        //         item.removeEventListener("mouseout", out);
+                
+        //         console.log(country);
+        //     })
+        // }
     })
 
     // function to detect if a user is hovering over a country
