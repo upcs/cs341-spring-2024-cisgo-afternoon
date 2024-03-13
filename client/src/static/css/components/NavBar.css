@@ -1,4 +1,4 @@
-
+/*
 .nav {
     list-style-type: none;
     margin: 0;
@@ -7,20 +7,20 @@
 
 .navbar {
     position: fixed;
-    top: 40px; /* Adjust top position */
+    top: 40px; 
     width: 250px;
-    height: calc(100% - 40px); /* Adjust height to fill the remaining space */
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color */
+    height: calc(100% - 40px); 
+    background-color: rgba(0, 0, 0, 0.5); 
     transition: transform 0.3s ease-in-out;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden; 
 }
 
 .expanded {
-    transform: translateX(0);
+    transform: translateX(0) !important;
 }
 
 .collapsed {
-    transform: translateX(-250px);
+    transform: translateX(-250px) !important;
 }
 
 .toggle-button {
@@ -91,4 +91,82 @@
     margin-right: 35px;
     padding: 5px;
     width: 25px;
-}
+} 
+*/
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 40px;
+    width: 250px;
+    height: calc(100% - 40px);
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    overflow-x: hidden;
+    z-index: 1000;
+  }
+  
+  .expanded {
+    transform: translateX(0) !important;
+    z-index: 1000;
+  }
+  
+  .collapsed {
+    transform: translateX(-250px) !important;
+  }
+  
+  .toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 100; /* Ensure button is clickable */
+  }
+  
+  .navbar li a, .navbar li button {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    width: 100%;
+  }
+  
+  .navbar .material-icons {
+    margin-right: 10px;
+  }
+  
+  .navbar li button:hover,
+  .navbar li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Additional styles for sub-buttons */
+  .navbar div button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0; /* Spacing between buttons */
+    background: #333; /* Dark background for visibility */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar div button:hover {
+    background: #555; /* Lighter background on hover */
+  }
+  
+
+  
+
