@@ -1,32 +1,30 @@
-import React, { Suspense, lazy } from "react";
-//import { BrowserRouter } from "react-router-dom";
-//import { Routes, Route } from "react-router-dom";
+
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./static/css/global.css";
 
+// Directly import Home component instead of lazy loading for debugging
+import Home from './pages/Home.js';
 
-import "./static/css/global.css"
-
-const StartingPage = lazy(() => import('./pages/StartingPage.js'));
-
-const Main = lazy(() => import('./layouts/Main.js'));
-const Home = lazy(() => import('./pages/Home.js'));
-const AddPin = lazy(() => import("./pages/AddPin.js"));
-const Search = lazy(() => import('./pages/Search.js'));
-const Contact = lazy(() => import('./pages/Contact.js'));
-const About = lazy(() => import('./pages/About.js'));
-const Help = lazy(() => import('./pages/Help.js'));
-const Login = lazy(() => import('./pages/Login.js'));
-const Success = lazy(() => import('./pages/Success.js'));
-const Error = lazy(() => import('./pages/Error.js'));
-const NotFound = lazy(() => import('./pages/NotFound.js'));
+// Continue lazy loading other components as necessary
+const StartingPage = React.lazy(() => import('./pages/StartingPage.js'));
+const AddPin = React.lazy(() => import("./pages/AddPin.js"));
+const Search = React.lazy(() => import('./pages/Search.js'));
+const Contact = React.lazy(() => import('./pages/Contact.js'));
+const About = React.lazy(() => import('./pages/About.js'));
+const Help = React.lazy(() => import('./pages/Help.js'));
+const Login = React.lazy(() => import('./pages/Login.js'));
+const Success = React.lazy(() => import('./pages/Success.js'));
+const Error = React.lazy(() => import('./pages/Error.js'));
+const NotFound = React.lazy(() => import('./pages/NotFound.js'));
 
 const App = () => {
   return (
     <Router>
-      <Suspense fallback={<Main />}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<StartingPage />} /> {/* StartingPage as the initial route */}
-          <Route path="/map" element={<Home />} /> {/* Updated path for Home component */}
+          <Route path="/" element={<StartingPage />} />
+          <Route path="/map" element={<Home />} />
           <Route path="/add" element={<AddPin />} />
           <Route path="/search" element={<Search />} />
           <Route path="/contact" element={<Contact />} />
