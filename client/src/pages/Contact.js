@@ -4,7 +4,7 @@ import '../static/css/pages/Contact.css';
 
 const Contact = () => {
   return (
-    <div>
+    <div data-testid="contact">
       <header>
         <h1>Contact Us</h1>
       </header>

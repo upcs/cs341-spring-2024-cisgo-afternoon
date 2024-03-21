@@ -2,7 +2,7 @@ import React from 'react';
 
 const Error = () => {
   return (
-    <div>
+    <div data-testid="error">
       <h1>Error</h1>
     </div>
   );

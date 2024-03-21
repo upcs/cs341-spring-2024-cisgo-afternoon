@@ -26,7 +26,7 @@ const Home = () => {
   console.log(experiences)
 
   return (
-    <div className="body">
+    <div className="body" data-testid="home">
       <NavBar />
       <WorldMap />
     </div>

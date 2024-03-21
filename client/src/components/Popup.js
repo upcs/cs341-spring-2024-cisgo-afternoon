@@ -56,7 +56,7 @@ const countryFlagUrls = {
     const { name, contact, body } = experience;
   
     return (
-      <div className="popup-overlay" onClick={onClose}>
+      <div className="popup-overlay" onClick={onClose} data-testid="popup">
         <div className="popup-content" onClick={(e) => e.stopPropagation()}>
           <span className="popup-close" onClick={onClose}>X</span>
           <h2>{name.firstName} {name.lastName}</h2>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = () => {
   return (
-    <div>
+    <div data-testid="login">
       <h1>Hello World</h1>
     </div>
   );

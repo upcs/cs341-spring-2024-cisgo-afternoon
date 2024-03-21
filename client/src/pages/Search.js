@@ -82,7 +82,7 @@ const Search = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div data-testid="search">
       <NavBar /> {/* Ensure NavBar is rendered */}
       <div className="app">
         <input placeholder='Search Location...' onChange={event => setQuery(event.target.value)}></input>

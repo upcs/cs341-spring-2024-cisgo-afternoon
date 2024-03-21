@@ -14,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <div>
+    <div data-testid="navbar">
       <div className={`navbar ${filterOpen ? "expanded" : "collapsed"}`}>
         <ul className="nav">
           <li className="expanded">

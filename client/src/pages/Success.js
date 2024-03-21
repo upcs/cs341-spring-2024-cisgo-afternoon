@@ -4,7 +4,7 @@ import '../static/css/pages/Success.css';
 
 const Success = () => {
   return (
-    <div>
+    <div data-testid="success">
         <div id="thank-you" >
           <h2>Thank you for your submission!</h2>
           <p>Your input will be reviewed and a copy of your response will be sent to your email.</p>

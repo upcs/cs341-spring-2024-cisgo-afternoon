@@ -7,7 +7,7 @@ const Help = () => {
  const forceUpdate = React.useCallback(() => updateState({}), []);
 
   return (
-    <div>
+    <div data-testid="help">
       <header className="title-header">
         <h1 className="title">Help Page</h1>
       </header>

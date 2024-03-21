@@ -4,7 +4,7 @@ import '../static/css/pages/About.css';
 
 const About = () => {
   return (
-    <div>
+    <div data-testid="about">
       <h1>About</h1>
     </div>
   );
