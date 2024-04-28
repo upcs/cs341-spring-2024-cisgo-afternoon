@@ -10,7 +10,7 @@ const AdminLogin = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    const email = formData.get("email");
+    const email = formData.get("username");
     const password = formData.get("password");
 
     fetch(`${process.env.REACT_APP_API}/auth/login`, {
@@ -19,7 +19,7 @@ const AdminLogin = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
+        username: email,
         password: password,
       }),
     })
@@ -30,11 +30,14 @@ const AdminLogin = () => {
         return res.json();
       })
       .then(data => {
-        if (data.valid) {
-          navigate("/admin");
-          // const el = document.createElement("a");
-          // el.setAttribute("href", '/admin');
-          // el.click(); // go to admin panel lol
+        if (data.accessToken) {
+          console.log("GL+GEI")
+          fetch('http://localhost:3000/admin', {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${data.accessToken}`
+            }
+          }).then((data) => window.location.href = 'http://localhost:3000/admin');
         }
       })
       .catch(err => {
@@ -49,7 +52,7 @@ const AdminLogin = () => {
       </header>
       <main class="admin_main">
         <form onSubmit={handleLogin} method="get" class="login-form">
-          <input type="email" class="email" name="email" placeholder="Email" required></input>
+          <input type="username" class="email" name="username" placeholder="Username" required></input>
           <br />
           <input type="password" class="password" name="password" placeholder="Password" required></input>
           <br />

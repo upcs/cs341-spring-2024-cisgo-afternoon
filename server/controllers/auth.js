@@ -4,6 +4,7 @@ import asyncHandler from 'express-async-handler';
 
 import authModel from '../models/credentials.js';
 import { createAccessToken, createRefreshToken } from '../util/secretToken.js';
+import verifyToken from '../middleware/verifyToken.js';
 
 /**
  * @route POST /auth/login
@@ -107,6 +108,7 @@ export const updatePassword = asyncHandler(async (req, res) => {
 export const tokenRefresh = (req, res) => {
   const { cookies } = req;
   if (!cookies?.jwt) {
+    console.log("no cookies?`")
     return res.status(401).json({
       mesage: 'Unauthorized',
     });
@@ -130,7 +132,6 @@ export const tokenRefresh = (req, res) => {
     // TODO: Remove auth headers
 
     const accessToken = createAccessToken(user, '2m');
-    res.json({ accessToken });
+    res.status(200).json({ accessToken });
   });
 }
-
