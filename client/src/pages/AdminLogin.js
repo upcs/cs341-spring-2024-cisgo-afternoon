@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import NavBar from '../components/NavBar.js';
 import '../static/css/pages/AdminLogin.css';
 
 const AdminLogin = () => {
@@ -47,12 +48,13 @@ const AdminLogin = () => {
 
   return (
     <div>
+      <NavBar />
       <header class="admin_header">
-        <h1 class="admin_title">Welcome Back!</h1>
+        <h1 class="admin_title">Welcome Back Admin!</h1>
       </header>
       <main class="admin_main">
         <form onSubmit={handleLogin} method="get" class="login-form">
-          <input type="username" class="email" name="username" placeholder="Username" required></input>
+          <input type="username" class="admin-email" name="username" placeholder="Username" required></input>
           <br />
           <input type="password" class="password" name="password" placeholder="Password" required></input>
           <br />
