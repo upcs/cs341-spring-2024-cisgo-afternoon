@@ -37,6 +37,7 @@ const AddPin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
     try {
       const response = await fetch(`${process.env.REACT_APP_API}/experiences/add`, {
         method: 'POST',

@@ -123,6 +123,7 @@ export const getAllExperiences = asyncHandler(async (req, res) => {
  * @param {Express.Response} res
  */
 export const addExperience = asyncHandler(async (req, res) => {
+  console.log(req.body);
   if (!isValidExperience(req.body)) {
     return res.status(400).json({
       message: 'Invalid request',

@@ -2,6 +2,7 @@ export function isValidExperience(entry) {
   const stringFields = ['name', 'email', 'affiliation', 'program', 'location.country', 'location.city', 'external.institutions', 'external.partnerships', 'description'];
   for (const field of stringFields) {
     if (typeof entry[field] !== 'string' || entry[field].trim() === '') {
+      
       return false;
     }
   };
